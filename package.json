@@ -1,0 +1,11 @@
+{
+  "name": "leadsites",
+  "private": true,
+  "type": "module",
+  "description": "Local lead websites: one page per trade and city, a booking form and a forwarding phone line.",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

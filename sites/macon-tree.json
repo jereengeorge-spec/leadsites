@@ -1,0 +1,33 @@
+{
+  "slug": "macon-tree",
+  "brand": "Macon Tree Removal",
+  "trade": "tree removal",
+  "tradeTitle": "Tree Removal",
+  "pro": "tree pro",
+  "city": "Macon",
+  "state": "GA",
+  "region": "Middle Georgia",
+  "county": "Macon-Bibb County",
+  "nearby": ["Warner Robins", "Byron", "Perry", "Bonaire", "Centerville", "Kathleen", "Gray", "Forsyth", "Lizella", "Dry Branch"],
+  "domain": "",
+  "phone": "",
+  "accent": "#1f6f43",
+  "headline": "Tree Removal in Macon, GA",
+  "subhead": "Dead, leaning or storm-damaged tree? Book a free quote in two minutes. A local tree pro calls you back, usually the same day.",
+  "services": [
+    { "name": "Tree removal", "text": "Whole-tree removal near houses, fences, driveways and power lines, including cleanup and haul-off." },
+    { "name": "Storm and emergency cleanup", "text": "Trees and big limbs down after wind or ice. Tell us if it is on the house or blocking the driveway." },
+    { "name": "Stump grinding", "text": "Stumps ground below the surface so you can mow, plant or lay sod again." },
+    { "name": "Trimming and pruning", "text": "Limbs over the roof, dead branches and clearance over driveways and lines." },
+    { "name": "Dead or leaning tree checks", "text": "Not sure if a tree is safe? A pro looks at it and tells you your options." },
+    { "name": "Lot and brush clearing", "text": "Overgrown lots, fallen pines and brush cleared for building or just to get the yard back." }
+  ],
+  "sizes": ["Small (under 20 ft)", "Medium (20 to 40 ft)", "Large (40 to 60 ft)", "Very large (over 60 ft)", "Not sure"],
+  "faq": [
+    { "q": "How much does tree removal cost in Macon?", "a": "It depends on the tree's size, how close it is to the house or power lines, and whether a truck can reach it. Small trees can be a few hundred dollars; large trees near a house cost more. The pro gives you a free quote before any work starts." },
+    { "q": "How fast can someone come out?", "a": "For storm damage, pros try to come the same day. For regular jobs, most quotes happen within a few days. Pick the day and time that suit you in the form and the pro confirms by phone." },
+    { "q": "Do I need a permit to remove a tree?", "a": "Rules vary. Historic districts, some neighborhoods and HOAs have their own. Ask the pro, and check with Macon-Bibb County if you are not sure." },
+    { "q": "Will my homeowners insurance pay for it?", "a": "Often only when a storm drops a tree on a covered building like the house or a fence. Check your policy; the pro can photograph the damage for your claim." },
+    { "q": "Who actually does the work?", "a": "An independent local tree company we partner with. We are a free referral service: we take your request and connect you with a pro. You never pay us anything." }
+  ]
+}
