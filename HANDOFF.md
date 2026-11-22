@@ -56,6 +56,7 @@ Rules (from CLAUDE.md):
 | `test/*.test.mjs` | 12 tests: page builds, signature check, voice paths, recordings, booking paths. They use fake Twilio, Resend and phone-lookup services. |
 | `README.md` | Go-live steps for Cloudflare, domain, Resend and Twilio. |
 | `CLAUDE.md` | Rules for working in this repository. |
+| `marketing/marketplace-test/` | Week 1 Facebook Marketplace test: two listing images, copy-paste text, first-reply script, test steps and tally (README.md). `render.cjs` remakes the images. |
 
 ### Environment variables (Cloudflare Pages, Settings, Variables)
 | Name | Type | Notes |
@@ -81,6 +82,9 @@ Twilio: set the number's Voice webhook to `https://<domain>/api/voice` (HTTP POS
    Jereen chooses the test. Not yet designed. Any spend needs Jereen's OK.
    Budget: free listings only. No paid boost without Jereen's approval of the exact amount.
    Jereen chose all three to learn, one at a time: week 1 offers, week 2 prices (best offer), week 3 cities (best offer).
+   Week 1 kit is ready in `marketing/marketplace-test/` (A: free estimate, B: storm damage help).
+   Not confirmed: whether Marketplace allows service listings now. Jereen checks for a Services option on her phone; if none, use local groups.
+   Each lead must go to one tree company the same day (free trial lead), or the homeowner is told honestly.
 2. **Traction decides the next step.** Traction = 10 or more serious messages, OR 5 booked estimates (either one). Jereen set this on 2026-11-22.
 3. **Then build the site and set up the phone line.** Domain (about $11 a year) and phone line (about $1.15 a month) only after traction.
 4. **Then call potential buyers (partner companies)** with proof from the test and the site.
@@ -120,7 +124,8 @@ Keyword count: dropped. Ask Maps and the list were too big to count. It was not 
 
 ## Questions: answered 2026-11-22
 - City: Cobb County, GA (not Macon). Towns: Marietta, Smyrna, Kennesaw, Acworth.
-- Business name: **Cobb Tree Service** (chosen 2026-11-22). Not yet checked against existing businesses.
+- Business name: Jereen chose **Cobb Tree Service**, but a Marietta company already uses that name (Behance profile, cobbtreeservice.net).
+  Do not use it. A new name is still needed. The Marketplace listings use no name for now.
 - Research: free check first. Count tree companies per Cobb city on Google Maps. No paid scraper until Jereen approves the price.
 - Ads test: yes, $300, only if the partner calls go well.
 - Pay model: flat monthly or per booked job, decide with the partner.
