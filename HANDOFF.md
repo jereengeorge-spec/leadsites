@@ -1,11 +1,11 @@
-# Lead sites: handoff
+# Lead sites: handoff (lead-site project only)
 
-**Start here.** If you are a new chat, read this whole file, then CLAUDE.md and README.md.
-Then ask Jereen the open questions at the end before building anything new.
+**Start here.** This file covers only the lead-site project. Read all of it, then CLAUDE.md and README.md.
+Do not load any other repository in this chat. Then ask Jereen the open questions at the end before building anything new.
 
-## How to continue in a new chat
-1. Paste this: "Continue the lead-sites project. Read HANDOFF.md in jereengeorge-spec/leadsites first."
-2. If Claude cannot see the repository, ask it to attach `jereengeorge-spec/leadsites` with push access.
+## How to start a new chat
+1. Attach only `jereengeorge-spec/leadsites`.
+2. Paste this: "Continue the lead-sites project. Read HANDOFF.md first."
 3. Work on a branch and open a draft pull request. Jereen merges on GitHub.
 
 ## Jereen: how to work with her
@@ -16,32 +16,38 @@ Then ask Jereen the open questions at the end before building anything new.
 - Ask before spending money, changing Cloudflare, Twilio or Resend settings or keys, buying a domain,
   merging, or contacting any business.
 
-## What the business is
-A "website landlord" (The Koerner Office, episode #296, Kyle). Build one plain website per trade per city.
-It ranks on Google. Its phone number forwards calls to one local partner company, which pays a flat monthly
-fee. Jereen does not do the work.
+## What the project is
+A "website landlord" model (The Koerner Office, episode #296, Kyle). Build one plain website per trade per city.
+It ranks on Google. Its phone number forwards calls to one local partner company, which pays a flat monthly fee.
+Jereen does not do the work. The partner does.
 
 First target: **tree removal in Macon, GA** (Macon-Bibb County). Claude chose Macon. Jereen has not confirmed it.
 
-Rules for this business (from CLAUDE.md):
+Rules (from CLAUDE.md):
 - Every page says it is a free referral service.
 - Never claim licenses, insurance or reviews we do not have.
 - No fake Google Business Profiles, addresses or reviews. One partner company per site.
 - Callers hear that calls may be recorded. The booking form says one local pro may call or text them.
 
+## Timeline (lead-site work only)
+- Nov 20: Jereen chose this business. Claude picked tree removal and Macon.
+- Nov 21: built the first site, booking form, phone-line code, recording emails and 12 tests. Pushed to main
+  (commit `f424b74`). Added this handoff file (merged as `30fa490`).
+- Nothing deployed yet. Nothing is live.
+
 ## Repository
 - Repository: https://github.com/jereengeorge-spec/leadsites (currently public, see open questions)
-- Main branch, last commit: `f424b74` "First lead site: tree removal in Macon, GA, with booking form and phone line"
-- Tests: `npm test` runs 12 tests, all passing on 2026-11-21 (Node 20 or newer)
+- Main branch, latest commit: `30fa490` (merge of the handoff pull request)
+- Tests: `npm test` runs 12 tests, all passing on 2026-11-22 (Node 20 or newer)
 - Build: `node build.mjs macon-tree` writes `dist/macon-tree/`
 
 ### Files
 | File | What it does |
 |---|---|
 | `sites/macon-tree.json` | Everything about the Macon site: brand, trade, city, towns, services, FAQ, phone, domain. Phone and domain are still blank. |
-| `build.mjs` | Builds the pages into `dist/<slug>/`: home, thank-you, not-sent, privacy, robots.txt, favicon, _headers. Adds sitemap only when a domain is set. |
-| `functions/api/book.js` | POST `/api/book`: the booking form. Emails the partner and Jereen, with up to 3 photos. Hidden spam field. Redirects to `/thanks/` or `/oops/`. |
-| `functions/api/voice.js` | POST `/api/voice`: Twilio voice webhook. Rings the partner with a "New customer call" message, records both sides. Missed call: email plus voicemail. No partner set: voicemail plus email. |
+| `build.mjs` | Builds pages into `dist/<slug>/`: home, thank-you, not-sent, privacy, robots.txt, favicon, _headers. Adds a sitemap only when a domain is set. |
+| `functions/api/book.js` | POST `/api/book`: booking form. Emails the partner and Jereen, with up to 3 photos. Hidden spam field. Redirects to `/thanks/` or `/oops/`. |
+| `functions/api/voice.js` | POST `/api/voice`: Twilio voice webhook. Rings the partner with "New customer call", records both sides. Missed call: email plus voicemail. No partner set: voicemail plus email. |
 | `functions/api/recording.js` | POST `/api/recording`: Twilio says a recording is ready. Emails the MP3 with the caller's number. |
 | `lib/twilio.js` | Checks Twilio signatures (HMAC-SHA1), builds TwiML, formats phone numbers. |
 | `lib/email.js` | Sends email through Resend. |
@@ -68,8 +74,8 @@ Twilio: set the number's Voice webhook to `https://<domain>/api/voice` (HTTP POS
 - The `functions/` folder sits at the repository root.
 - If the build fails on the Node version, add a variable `NODE_VERSION` set to `22`.
 
-## Status (2026-11-21)
-**Built:** site pages, booking form, phone-line code, recording emails, missed-call and voicemail emails, tests, README, CLAUDE.md.
+## Status (2026-11-22)
+**Built:** site pages, booking form, phone-line code, recording emails, missed-call and voicemail emails, tests, README, CLAUDE.md, this handoff.
 
 **Not done:**
 - Not deployed anywhere: no Cloudflare project, no domain, no Resend, no Twilio account.
@@ -85,14 +91,14 @@ Twilio: set the number's Voice webhook to `https://<domain>/api/voice` (HTTP POS
 - No price is set. Kyle's $300 to $600 a month is only a reference point.
 
 ## Decisions so far
-- Trade: tree removal (storm and emergency work, high-value jobs).
+- Trade: tree removal (storm and emergency work, higher-value jobs).
 - City: Macon, GA. Chosen by Claude, not confirmed.
 - Pay model: flat monthly fee, following Kyle. Not confirmed.
 - Partner: one company per site. None found yet.
 - Booking fields: name, mobile, address, ZIP, service, size, how soon, best day and time, details, photos.
 - Calls: the partner hears "New customer call from <brand>" first. Both sides are recorded.
 
-## Costs (estimates, check the live prices)
+## Costs (estimates, check live prices)
 - Cloudflare Pages: free. Domain: about $11 a year.
 - Resend: free up to 3,000 emails a month (per README).
 - Twilio: about $1.15 a month per local number, plus about 2 to 3 cents a minute.
@@ -124,16 +130,7 @@ Twilio: set the number's Voice webhook to `https://<domain>/api/voice` (HTTP POS
 - No spending, domain purchase or service-setting changes without Jereen's OK.
 - Never invent prices, reviews, licenses, towns or partner names.
 
-## Related work (the Clearout app, repo `jereengeorge-spec/clearout`)
-- Separate project. Do not mix its code with this repository.
-- Live app: https://clearout-eta.vercel.app
-- December money plan: `docs/DECEMBER-PLAN.md`. Pull request #15 is merged. Prices were approved and set on Nov 20. Price drops happen every 7 days.
-- Post checklist: pull request #13. Conflicts are resolved and the preview is ready. It is still a draft.
-- Night helper: a nightly task at 3:41 AM New York time. It writes listing text and questions in the app. It never posts or buys.
-- Flip-check: a buy-or-pass checklist for eBay listings. Its instructions were sent to Jereen as a file and are not stored in any repository.
-
 ## Links
-- Live app: https://clearout-eta.vercel.app
 - Lead sites repository: https://github.com/jereengeorge-spec/leadsites
 - Cloudflare sign-up: https://dash.cloudflare.com/sign-up
 - Resend sign-up: https://resend.com/signup

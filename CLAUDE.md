@@ -3,7 +3,7 @@
 Start with HANDOFF.md: the full status, decisions and open questions.
 
 Jereen's local lead-website business ("website landlord"). See README.md for what it does and how it goes online.
-Separate from the Clearout app (repo `jereengeorge-spec/clearout`), whose CLAUDE.md has Jereen's full reply rules.
+This repository is its own project. Do not load or attach any other repository in this chat.
 
 ## How Jereen wants replies (short version)
 - Reads on a phone, often dictates by voice. Short, plain sentences; lead with the answer; explain technical words.
