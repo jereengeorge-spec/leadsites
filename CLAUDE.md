@@ -1,5 +1,7 @@
 # Lead sites: read this first
 
+Start with HANDOFF.md: the full status, decisions and open questions.
+
 Jereen's local lead-website business ("website landlord"). See README.md for what it does and how it goes online.
 Separate from the Clearout app (repo `jereengeorge-spec/clearout`), whose CLAUDE.md has Jereen's full reply rules.
 
