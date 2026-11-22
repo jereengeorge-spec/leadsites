@@ -76,17 +76,14 @@ Twilio: set the number's Voice webhook to `https://<domain>/api/voice` (HTTP POS
 - The `functions/` folder sits at the repository root.
 - If the build fails on the Node version, add a variable `NODE_VERSION` set to `22`.
 
-## Plan (set 2026-11-22, in this order)
-1. **Free keyword check and partner calls this week.** Check real search demand for tree removal in Macon with
-   Google's free Keyword Planner. Jereen calls Macon tree companies and offers a free week of calls.
-2. **$300 Google Ads test, only if the calls go well.** Jereen approves this. No ad spend before that.
-3. **Partner pay: flat monthly or per booked job.** Both are on the table. Decide with the first partner.
-   Pitch the free week first, then offer the choice.
-4. **Hold the domain and the phone line until demand shows.** No domain purchase. No Twilio number.
-   Resend also waits, because it needs a domain. A free Cloudflare preview link is fine for showing partners.
-5. This handoff follows that order.
+## Plan (revised 2026-11-22, in this order)
+1. **Get the system up and running first.** Build the Cobb County site, booking form and phone flow, and test them end to end.
+   Needs Jereen's OK before any purchase (domain about $11 a year; phone line about $1.15 a month).
+2. **Prove it works.** One test booking and one test call, with Jereen's own phone as the stand-in partner.
+3. **Then call potential buyers (partner companies).** Learn what they would pay and how they want to pay.
+4. **Ads test later.** The $300 test comes only after the system works and partner interest is known.
 
-Demand shows when the keyword check looks good and at least one partner says yes.
+Keyword count: dropped. Ask Maps and the list were too big to count. It was not needed.
 
 ## Status (2026-11-22)
 **Built:** site pages, booking form, phone-line code, recording emails, missed-call and voicemail emails, tests, README, CLAUDE.md, this handoff.
