@@ -120,6 +120,7 @@ Demand shows when the keyword check looks good and at least one partner says yes
 
 ## Questions: answered 2026-11-22
 - City: Cobb County, GA (not Macon). Towns: Marietta, Smyrna, Kennesaw, Acworth.
+- Business name: **Cobb Tree Service** (chosen 2026-11-22). Not yet checked against existing businesses.
 - Research: free check first. Count tree companies per Cobb city on Google Maps. No paid scraper until Jereen approves the price.
 - Ads test: yes, $300, only if the partner calls go well.
 - Pay model: flat monthly or per booked job, decide with the partner.
