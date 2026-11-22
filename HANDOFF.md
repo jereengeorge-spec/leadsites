@@ -89,40 +89,44 @@ Twilio: set the number's Voice webhook to `https://<domain>/api/voice` (HTTP POS
 - No lead dashboard or analytics. Leads arrive by email only.
 - The repository is public.
 - No price is set. Kyle's $300 to $600 a month is only a reference point.
+- Nothing is bought yet. Domain and phone line are on hold by choice (see Decisions).
 
 ## Decisions so far
+Jereen answered on 2026-11-22. New order: prove demand first, spend later.
 - Trade: tree removal (storm and emergency work, higher-value jobs).
-- City: Macon, GA. Chosen by Claude, not confirmed.
-- Pay model: flat monthly fee, following Kyle. Not confirmed.
+- City: Macon, GA. Chosen by Claude. The free keyword check tests it. If search demand is weak, pick another city or trade.
+- Step 1 (this week, free): check Google keyword demand for tree removal in Macon, and call tree companies to find a partner. No domain, no phone line, no ads yet.
+- Step 2 (only if partner calls go well): a $300 Google Ads test. Jereen approved the amount, but only after step 1 looks good. Claude asks again before any ad is started.
+- Domain and Twilio phone line: on hold until demand shows. Do not buy or sign up before then. Cloudflare Pages is free and can stay for previews.
+- Pay model: partner pays a flat monthly fee or a fee per booked job. Jereen named both, so it is open. Settle it with the first partner. Flat monthly is the reference point (Kyle).
 - Partner: one company per site. None found yet.
 - Booking fields: name, mobile, address, ZIP, service, size, how soon, best day and time, details, photos.
 - Calls: the partner hears "New customer call from <brand>" first. Both sides are recorded.
+- Note: Resend only sends from a verified domain, so the booking form cannot email leads until a domain is bought. That is fine while on hold.
 
 ## Costs (estimates, check live prices)
-- Cloudflare Pages: free. Domain: about $11 a year.
-- Resend: free up to 3,000 emails a month (per README).
-- Twilio: about $1.15 a month per local number, plus about 2 to 3 cents a minute.
+- Now: $0. Cloudflare Pages is free.
+- When demand shows: domain about $11 a year. Twilio about $1.15 a month per local number, plus about 2 to 3 cents a minute. Resend free up to 3,000 emails a month (per README).
+- Ads test: $300, only after step 1 goes well.
 
-## Open questions for Jereen (none answered yet)
-1. Confirm Macon and the nearby towns.
-2. Approve a $100 to $200 Google Ads test? It is the fastest route to calls.
-3. Give 2 or 3 domain names to check.
-4. Is "Macon Tree Removal" okay? Is there a business registration?
-5. Does Jereen know any Macon tree companies? Should we draft a partner agreement?
-6. How should the partner pay: flat monthly, or per booking?
-7. Keep call recording on, or off until the Georgia rules are checked?
-8. Privacy: build the 12-month deletion, or change the wording?
-9. Make the repository private?
-10. Approve the sign-ups (Cloudflare, Resend, Twilio) and about $15 to start?
+## Open questions for Jereen
+Answered: ads test ($300, conditional), pay model (open, decide with partner), domain and phone line (on hold).
+Still open:
+1. Confirm the nearby towns list (the keyword check may change it).
+2. Is "Macon Tree Removal" okay? Is there a business registration? Needed before the domain.
+3. Does Jereen know any Macon tree companies? Should we draft a partner agreement?
+4. Keep call recording on, or off until the Georgia rules are checked?
+5. Privacy: build the 12-month deletion, or change the wording?
+6. Make the repository private?
+7. Later, with the domain: 2 or 3 domain names to check, and approve the Resend and Twilio sign-ups.
 
 ## Next steps, in order
-1. Jereen signs up for Cloudflare, creates the Pages project and shares the preview link.
-2. Jereen answers the open questions.
-3. Jereen signs up for Resend and Twilio. Claude guides the variable setup. Test one booking end to end.
-4. Buy the domain, verify it in Resend, set the number's Voice webhook.
-5. Test a call: set `CONTRACTOR_PHONE` to Jereen's own phone as a stand-in partner. Check the recording email.
-6. Find the first partner: Jereen calls tree companies and offers a free week of calls.
-7. Decide on the ads test.
+1. Free keyword check: Claude looks up search demand and competition for tree removal in Macon and nearby towns, and reports back. Free tools only, no spending.
+2. Partner calls this week: Jereen calls Macon tree companies and offers a free week of calls. Claude drafts the call script and a short pitch.
+3. Review: do calls go well (partner interested, demand looks real)? If not, change city or trade.
+4. If yes: Jereen approves the $300 ads test. Then buy the domain, sign up for Resend and Twilio, set the Voice webhook, and put the site live on Cloudflare.
+5. Test a call: set `CONTRACTOR_PHONE` to Jereen's own phone first. Check the recording email.
+6. Switch `CONTRACTOR_PHONE` to the partner, run the ads, and track leads by email.
 
 ## Standing rules for this repository
 - Work on a branch, open a draft pull request, and let Jereen merge.
