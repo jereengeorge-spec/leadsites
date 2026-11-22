@@ -21,7 +21,8 @@ A "website landlord" model (The Koerner Office, episode #296, Kyle). Build one p
 It ranks on Google. Its phone number forwards calls to one local partner company, which pays either a flat monthly fee or a fee per booked job (not chosen yet).
 Jereen does not do the work. The partner does.
 
-First target: **tree removal in Macon, GA** (Macon-Bibb County). Claude chose Macon. Jereen has not confirmed it.
+First target: **tree removal in Cobb County, GA**. Jereen chose Cobb on 2026-11-22 (she works there). Macon was dropped.
+Towns chosen by Jereen: **Marietta, Smyrna, Kennesaw, Acworth**. The site file (`sites/macon-tree.json`) still says Macon and must be rebuilt before any use.
 
 Rules (from CLAUDE.md):
 - Every page says it is a free referral service.
@@ -118,13 +119,15 @@ Demand shows when the keyword check looks good and at least one partner says yes
 - Twilio: about $1.15 a month per local number, plus about 2 to 3 cents a minute.
 
 ## Questions: answered 2026-11-22
+- City: Cobb County, GA (not Macon). Towns: Marietta, Smyrna, Kennesaw, Acworth.
+- Research: free check first. Count tree companies per Cobb city on Google Maps. No paid scraper until Jereen approves the price.
 - Ads test: yes, $300, only if the partner calls go well.
 - Pay model: flat monthly or per booked job, decide with the partner.
 - Domain and phone line: hold until demand shows. This replaces "approve sign-ups and about $15".
 - Plan order: as above.
 
 ## Still open for Jereen
-1. Confirm Macon and the nearby towns (the keyword check will test Macon).
+1. Rebuild the site for Cobb County (site file, brand name, towns). Waits for Jereen's OK.
 2. Is "Macon Tree Removal" okay? Is there a business registration? (Only matters once a domain is bought.)
 3. Does Jereen know any Macon tree companies? Should we draft a one-page partner agreement for the free week?
 4. Keep call recording on, or off until the Georgia rules are checked? (Matters when the phone line is set up.)
