@@ -77,11 +77,12 @@ Twilio: set the number's Voice webhook to `https://<domain>/api/voice` (HTTP POS
 - If the build fails on the Node version, add a variable `NODE_VERSION` set to `22`.
 
 ## Plan (revised 2026-11-22, in this order)
-1. **Get the system up and running first.** Build the Cobb County site, booking form and phone flow, and test them end to end.
-   Needs Jereen's OK before any purchase (domain about $11 a year; phone line about $1.15 a month).
-2. **Prove it works.** One test booking and one test call, with Jereen's own phone as the stand-in partner.
-3. **Then call potential buyers (partner companies).** Learn what they would pay and how they want to pay.
-4. **Ads test later.** The $300 test comes only after the system works and partner interest is known.
+1. **Facebook Marketplace test first (A/B test).** Test whether Cobb homeowners respond to tree removal listings.
+   Jereen chooses the test. Not yet designed. Any spend needs Jereen's OK.
+2. **Traction decides the next step.** Jereen defines what counts as traction before the test starts.
+3. **Then build the site and set up the phone line.** Domain (about $11 a year) and phone line (about $1.15 a month) only after traction.
+4. **Then call potential buyers (partner companies)** with proof from the test and the site.
+5. **Ads test later.** The $300 test comes only after the above.
 
 Keyword count: dropped. Ask Maps and the list were too big to count. It was not needed.
 
