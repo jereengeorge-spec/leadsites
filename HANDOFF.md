@@ -80,7 +80,7 @@ Twilio: set the number's Voice webhook to `https://<domain>/api/voice` (HTTP POS
 1. **Facebook Marketplace test first (A/B test).** Test whether Cobb homeowners respond to tree removal listings.
    Jereen chooses the test. Not yet designed. Any spend needs Jereen's OK.
    Jereen chose all three to learn, one at a time: week 1 offers, week 2 prices (best offer), week 3 cities (best offer).
-2. **Traction decides the next step.** Jereen defines what counts as traction before the test starts.
+2. **Traction decides the next step.** Traction = 10 or more serious messages, OR 5 booked estimates (either one). Jereen set this on 2026-11-22.
 3. **Then build the site and set up the phone line.** Domain (about $11 a year) and phone line (about $1.15 a month) only after traction.
 4. **Then call potential buyers (partner companies)** with proof from the test and the site.
 5. **Ads test later.** The $300 test comes only after the above.
