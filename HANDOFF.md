@@ -79,6 +79,7 @@ Twilio: set the number's Voice webhook to `https://<domain>/api/voice` (HTTP POS
 ## Plan (revised 2026-11-22, in this order)
 1. **Facebook Marketplace test first (A/B test).** Test whether Cobb homeowners respond to tree removal listings.
    Jereen chooses the test. Not yet designed. Any spend needs Jereen's OK.
+   Budget: free listings only. No paid boost without Jereen's approval of the exact amount.
    Jereen chose all three to learn, one at a time: week 1 offers, week 2 prices (best offer), week 3 cities (best offer).
 2. **Traction decides the next step.** Traction = 10 or more serious messages, OR 5 booked estimates (either one). Jereen set this on 2026-11-22.
 3. **Then build the site and set up the phone line.** Domain (about $11 a year) and phone line (about $1.15 a month) only after traction.
