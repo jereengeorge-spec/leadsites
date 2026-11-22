@@ -42,3 +42,15 @@ number. Bookings and calls go to one local company that pays a flat monthly rent
 | `TWILIO_ACCOUNT_SID` | From the Twilio console home page |
 | `TWILIO_AUTH_TOKEN` (secret) | From the Twilio console; also proves calls really come from Twilio |
 | `CONTRACTOR_PHONE` | The partner's phone, `+1` and 10 digits. Empty = voicemail only |
+
+## Reference (open only when needed)
+- Cloudflare Pages: the `functions/` folder sits at the repository root. If the build fails on the Node
+  version, add a variable `NODE_VERSION` set to `22`.
+- `build.mjs` writes: home, thank-you, not-sent, privacy, robots.txt, favicon and `_headers`. It adds a sitemap
+  only when the site's JSON has a `"domain"`.
+- `functions/api/book.js`: POST `/api/book`, emails up to 3 photos, hidden spam field, redirects to `/thanks/`
+  or `/oops/`. `voice.js`: Twilio voice webhook. `recording.js`: emails the MP3 with the caller's number.
+- `lib/twilio.js`: checks Twilio signatures (HMAC-SHA1), builds TwiML, formats phone numbers.
+  `lib/email.js`: sends email through Resend.
+- `npm test`: 12 tests (page builds, signature check, voice paths, recordings, booking paths) using fake
+  Twilio, Resend and phone-lookup services. Needs Node 20 or newer.

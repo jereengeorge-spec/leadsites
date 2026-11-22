@@ -1,137 +1,42 @@
-# Lead sites: handoff (lead-site project only)
+# Lead sites: handoff
 
-**Start here.** This file covers only the lead-site project. Read all of it, then CLAUDE.md and README.md.
-Do not load any other repository in this chat. Then ask Jereen the open questions at the end before building anything new.
+Read only this file at the start. Open README.md only when a task needs file or setup details.
+Do not load any other repository. Work on a branch, open a draft pull request, Jereen merges.
 
-## How to start a new chat
-1. Attach only `jereengeorge-spec/leadsites`.
-2. Paste this: "Continue the lead-sites project. Read HANDOFF.md first."
-3. Work on a branch and open a draft pull request. Jereen merges on GitHub.
+## Working with Jereen
+- Reads on a phone, dictates by voice (expect transcription slips). Short plain sentences, answer first.
+- End every reply with a "Links" section, one full link per line. Say "you" or "Jereen", never guess pronouns.
+- Ask before spending money, changing Cloudflare, Twilio or Resend settings, buying a domain, merging,
+  or contacting any business.
 
-## Jereen: how to work with her
-- Reads on a phone and often dictates by voice, so expect transcription slips.
-- Short plain sentences. Lead with the answer. Explain technical words in a few words.
-- End every reply with a "Links" section, one full link per line.
-- Write "you" or "Jereen". Do not guess pronouns.
-- Ask before spending money, changing Cloudflare, Twilio or Resend settings or keys, buying a domain,
-  merging, or contacting any business.
-
-## What the project is
-A "website landlord" model (The Koerner Office, episode #296, Kyle). Build one plain website per trade per city.
-It ranks on Google. Its phone number forwards calls to one local partner company, which pays a flat monthly fee.
-Jereen does not do the work. The partner does.
-
-First target: **tree removal in Macon, GA** (Macon-Bibb County). Claude chose Macon. Jereen has not confirmed it.
-
-Rules (from CLAUDE.md):
-- Every page says it is a free referral service.
-- Never claim licenses, insurance or reviews we do not have.
-- No fake Google Business Profiles, addresses or reviews. One partner company per site.
-- Callers hear that calls may be recorded. The booking form says one local pro may call or text them.
-
-## Timeline (lead-site work only)
-- Nov 20: Jereen chose this business. Claude picked tree removal and Macon.
-- Nov 21: built the first site, booking form, phone-line code, recording emails and 12 tests. Pushed to main
-  (commit `f424b74`). Added this handoff file (merged as `30fa490`).
-- Nothing deployed yet. Nothing is live.
-
-## Repository
-- Repository: https://github.com/jereengeorge-spec/leadsites (currently public, see open questions)
-- Main branch, latest commit: `30fa490` (merge of the handoff pull request)
-- Tests: `npm test` runs 12 tests, all passing on 2026-11-22 (Node 20 or newer)
-- Build: `node build.mjs macon-tree` writes `dist/macon-tree/`
-
-### Files
-| File | What it does |
-|---|---|
-| `sites/macon-tree.json` | Everything about the Macon site: brand, trade, city, towns, services, FAQ, phone, domain. Phone and domain are still blank. |
-| `build.mjs` | Builds pages into `dist/<slug>/`: home, thank-you, not-sent, privacy, robots.txt, favicon, _headers. Adds a sitemap only when a domain is set. |
-| `functions/api/book.js` | POST `/api/book`: booking form. Emails the partner and Jereen, with up to 3 photos. Hidden spam field. Redirects to `/thanks/` or `/oops/`. |
-| `functions/api/voice.js` | POST `/api/voice`: Twilio voice webhook. Rings the partner with "New customer call", records both sides. Missed call: email plus voicemail. No partner set: voicemail plus email. |
-| `functions/api/recording.js` | POST `/api/recording`: Twilio says a recording is ready. Emails the MP3 with the caller's number. |
-| `lib/twilio.js` | Checks Twilio signatures (HMAC-SHA1), builds TwiML, formats phone numbers. |
-| `lib/email.js` | Sends email through Resend. |
-| `test/*.test.mjs` | 12 tests: page builds, signature check, voice paths, recordings, booking paths. They use fake Twilio, Resend and phone-lookup services. |
-| `README.md` | Go-live steps for Cloudflare, domain, Resend and Twilio. |
-| `CLAUDE.md` | Rules for working in this repository. |
-
-### Environment variables (Cloudflare Pages, Settings, Variables)
-| Name | Type | Notes |
-|---|---|---|
-| `BRAND` | variable | Name callers hear, e.g. "Macon Tree Removal" |
-| `RESEND_API_KEY` | secret | From resend.com |
-| `LEAD_EMAIL_FROM` | variable | e.g. `Macon Tree Removal <leads@your-domain.com>`. The domain must be verified in Resend. |
-| `LEAD_EMAIL_TO` | variable | Comma list: the partner's email, then Jereen's |
-| `TWILIO_ACCOUNT_SID` | variable | From the Twilio console home page |
-| `TWILIO_AUTH_TOKEN` | secret | From Twilio. Also used to check that calls really come from Twilio. |
-| `CONTRACTOR_PHONE` | variable | Partner's phone, `+1` and 10 digits. Leave empty for voicemail only. |
-
-Twilio: set the number's Voice webhook to `https://<domain>/api/voice` (HTTP POST).
-
-### Cloudflare Pages settings
-- Build command: `node build.mjs macon-tree`
-- Output directory: `dist/macon-tree`
-- The `functions/` folder sits at the repository root.
-- If the build fails on the Node version, add a variable `NODE_VERSION` set to `22`.
+## The project
+"Website landlord" model (Koerner Office #296). One plain site per trade per city, ranks on Google, calls and
+bookings go to one local partner who pays a rent. Jereen does not do the work. First target: tree removal in
+Macon, GA (chosen by Claude, not confirmed). Rules are in CLAUDE.md.
 
 ## Status (2026-11-22)
-**Built:** site pages, booking form, phone-line code, recording emails, missed-call and voicemail emails, tests, README, CLAUDE.md, this handoff.
+- Built and tested (12 tests): site pages, booking form, phone-line code, recording emails. Nothing deployed.
+- Not done: no Cloudflare project, domain, Resend or Twilio. Phone and domain blank in `sites/macon-tree.json`.
+- Not done: partner agreement, Georgia call-recording check, name check for "Macon Tree Removal",
+  12-month deletion promised on the privacy page (nothing deletes yet), repo is still public.
 
-**Not done:**
-- Not deployed anywhere: no Cloudflare project, no domain, no Resend, no Twilio account.
-- Phone number and domain are blank in `sites/macon-tree.json`.
-- Never run against real Cloudflare, Twilio or Resend. The tests use fakes.
-- The privacy page promises bookings and recordings are deleted after 12 months. Nothing deletes them yet.
-- Georgia call-recording rules are not checked.
-- No partner agreement is written.
-- The nearby-towns list is Claude's choice. Jereen has not confirmed it.
-- The name "Macon Tree Removal" is not checked against existing businesses.
-- No lead dashboard or analytics. Leads arrive by email only.
-- The repository is public.
-- No price is set. Kyle's $300 to $600 a month is only a reference point.
+## Decisions (Jereen, 2026-11-22)
+- Prove demand first, spend later.
+- Domain and Twilio line: on hold until demand shows. Cost now: $0.
+- $300 Google Ads test: only if partner calls go well. Ask again before starting any ad.
+- Pay model: flat monthly or per booked job. Open, settle with the first partner.
+- Note: Resend only sends from a verified domain, so the form cannot email leads until a domain is bought.
 
-## Decisions so far
-- Trade: tree removal (storm and emergency work, higher-value jobs).
-- City: Macon, GA. Chosen by Claude, not confirmed.
-- Pay model: flat monthly fee, following Kyle. Not confirmed.
-- Partner: one company per site. None found yet.
-- Booking fields: name, mobile, address, ZIP, service, size, how soon, best day and time, details, photos.
-- Calls: the partner hears "New customer call from <brand>" first. Both sides are recorded.
+## Next steps
+1. Free keyword check: search demand for tree removal in Macon and nearby towns. Claude reports back.
+2. Partner calls this week: Jereen calls Macon tree companies, offers a free week of calls. Claude drafts the script.
+3. Review. If weak, change city or trade.
+4. If good: Jereen approves the $300 test, then buy domain, set up Resend and Twilio, go live (steps in README).
+5. Test a call with `CONTRACTOR_PHONE` set to Jereen's phone, then switch to the partner.
 
-## Costs (estimates, check live prices)
-- Cloudflare Pages: free. Domain: about $11 a year.
-- Resend: free up to 3,000 emails a month (per README).
-- Twilio: about $1.15 a month per local number, plus about 2 to 3 cents a minute.
-
-## Open questions for Jereen (none answered yet)
-1. Confirm Macon and the nearby towns.
-2. Approve a $100 to $200 Google Ads test? It is the fastest route to calls.
-3. Give 2 or 3 domain names to check.
-4. Is "Macon Tree Removal" okay? Is there a business registration?
-5. Does Jereen know any Macon tree companies? Should we draft a partner agreement?
-6. How should the partner pay: flat monthly, or per booking?
-7. Keep call recording on, or off until the Georgia rules are checked?
-8. Privacy: build the 12-month deletion, or change the wording?
-9. Make the repository private?
-10. Approve the sign-ups (Cloudflare, Resend, Twilio) and about $15 to start?
-
-## Next steps, in order
-1. Jereen signs up for Cloudflare, creates the Pages project and shares the preview link.
-2. Jereen answers the open questions.
-3. Jereen signs up for Resend and Twilio. Claude guides the variable setup. Test one booking end to end.
-4. Buy the domain, verify it in Resend, set the number's Voice webhook.
-5. Test a call: set `CONTRACTOR_PHONE` to Jereen's own phone as a stand-in partner. Check the recording email.
-6. Find the first partner: Jereen calls tree companies and offers a free week of calls.
-7. Decide on the ads test.
-
-## Standing rules for this repository
-- Work on a branch, open a draft pull request, and let Jereen merge.
-- No model names in commits or pull requests.
-- No spending, domain purchase or service-setting changes without Jereen's OK.
-- Never invent prices, reviews, licenses, towns or partner names.
+## Open questions
+Nearby towns, business name and registration, any Macon tree companies Jereen knows, call recording on or off
+(Georgia rules), keep or drop the 12-month deletion promise, make the repo private.
 
 ## Links
-- Lead sites repository: https://github.com/jereengeorge-spec/leadsites
-- Cloudflare sign-up: https://dash.cloudflare.com/sign-up
-- Resend sign-up: https://resend.com/signup
-- Twilio sign-up: https://www.twilio.com/try-twilio
+- Repository: https://github.com/jereengeorge-spec/leadsites

@@ -1,6 +1,6 @@
 # Lead sites: read this first
 
-Start with HANDOFF.md: the full status, decisions and open questions.
+Start with HANDOFF.md (short: status, decisions, next steps). Open README.md only when a task needs setup or file details.
 
 Jereen's local lead-website business ("website landlord"). See README.md for what it does and how it goes online.
 This repository is its own project. Do not load or attach any other repository in this chat.
